@@ -182,12 +182,12 @@
         }
 
         /* Music Control Styles */
-        #musicControl {
-            display: flex; /* Initially hidden */
+       #musicControl {
+            display: flex;
             justify-content: center;
+            align-items: center;
             margin-top: 20px;
-            width: 100%; /* Lebar kontrol musik responsif */
-            max-width: 200px; /* Maksimal lebar untuk desktop */
+            width: 100%;
         }
 
         #musicControl button {
@@ -198,7 +198,9 @@
             border-radius: 5px;
             cursor: pointer;
             font-weight: bold;
-            width: 100%; /* Lebar tombol kontrol musik responsif */
+            width: 100%;
+            max-width: 200px; /* Biar tombolnya nggak terlalu lebar */
+            text-align: center; /* Untuk pastikan teks di tengah */
         }
 
         .special-title {
