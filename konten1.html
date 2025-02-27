@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>presentto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #button-container {
+            margin-top: 20px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        #yes {
+            font-size: 16px;
+            padding: 10px 20px;
+            background-color: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        #no {
+            font-size: 16px;
+            padding: 10px 20px;
+            background-color: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #gift-image {
+            width: 100px; /* Ukuran gambar kecil */
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <img id="gift-image" src="hbd.jpeg" alt="Hadiah"> <!-- Ganti dengan URL atau path gambar -->
+    <h2 id="question">Tio ingin mengirimkan hadiah.</h2>
+    <div id="button-container">
+        <button id="yes" onclick="redirectToPage()">Terima</button>
+        <button id="no" onclick="increaseYesSizeAndChangeText()">Tolak</button>
+    </div>
+</div>
+
+<script>
+    let yesButton = document.getElementById("yes");
+    let questionText = document.getElementById("question");
+    let giftImage = document.getElementById("gift-image");
+    let size = 16;
+    let textIndex = 0;
+
+    let textArray = [
+        "kepencet tolak kan tadi?",
+        "hadiah lohh inii",
+        "baguss inii hadiah nya",
+        "masaa di tolak sihh",
+        "spesial dihari spesial jugaa",
+        "lebih spesial ketimbang mie ayam inii",
+        "serius ngga mauuu?!!",
+        "mauu yaa mauu yaa :))",
+        "tinggal di clikkk doang kok",
+        "Gweh maksaa nihh",
+        "tinggal di clikkk terimaa",
+        "PENCET TERIMA NYAA!!",
+    ];
+
+    function increaseYesSizeAndChangeText() {
+        if (textIndex === 0) {
+            giftImage.style.display = "none"; // Hilangkan gambar setelah klik pertama "No"
+        }
+
+        if (textIndex < textArray.length) {
+            questionText.innerText = textArray[textIndex];
+            textIndex++;
+        }
+
+        size += 15;
+        yesButton.style.fontSize = size + "px";
+        yesButton.style.padding = (size / 3) + "px " + (size / 2) + "px";
+    }
+
+    function redirectToPage() {
+        window.location.href = "konten2.html"; // Ganti dengan halaman tujuan
+    }
+</script>
+
+</body>
+</html>
